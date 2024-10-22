@@ -66,10 +66,45 @@ def ordenar_por_nota(matriz):
 
 def mostrar_prticipante_7(matriz:list) ->str:
 
+    flag = False
     print(f"\nParticipantes con 7 en todo los jruados\n")
     for i in range(len(matriz)):
 
         if matriz[i][1] == 7 and matriz[i][2] == 7 and matriz[i][3] == 7:
-            print(f"\nEl participante: {matriz[i]}\n")
+            flag = True
+            print(f"\nEl participante: {matriz[i][0]}\n")
+    
+    if flag == False:
+        print("No se encontraron participantes con 7 en todos los jurados")
 
     return matriz
+
+def mostrar_prticipantes_aplasados(matriz:list) ->str:
+
+    flag = False
+
+    print(f"\n--Participantes aplazados por el jurado 3--\n")
+    for i in range(len(matriz)):
+
+        if matriz[i][3] <=  3:
+            flag = True
+            print(f"\nEl participante: {matriz[i][0]}\n")
+    
+    if flag == False:
+        print("No se encontraron participantes aplazados")
+
+    return matriz
+
+def mostrar_top_3(matriz:list)->str:
+
+    lista_numero = inicializar_matriz(len(matriz), 2, 0)
+    mostrar_matriz(lista_numero)
+
+    for fil in range(len(matriz)):
+        promedio = int((matriz[fil][1] + matriz[fil][2] + matriz[fil][3])/3)
+        lista_numero[fil][0] = matriz[fil][0]
+        lista_numero[fil][1] = promedio
+         
+    
+    mostrar_matriz(lista_numero)
+

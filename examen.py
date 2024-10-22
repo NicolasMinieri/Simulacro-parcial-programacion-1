@@ -16,3 +16,7 @@ mostrar_participantes_notas(bailarinas)
 ordenar_por_nota(bailarinas)
 
 mostrar_prticipante_7(bailarinas)
+
+mostrar_prticipantes_aplasados(bailarinas)
+
+mostrar_top_3(bailarinas)
